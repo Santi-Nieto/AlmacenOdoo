@@ -1,0 +1,268 @@
+<odoo>
+    <!-- Vista Kanban para Trabajador -->
+    <record id="view_almacen_trabajador_kanban" model="ir.ui.view">
+        <field name="name">almacen.trabajador.kanban</field>
+        <field name="model">almacen.trabajador</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <!-- Campos que se usarán en la vista -->
+                <field name="nombre"/>
+                <field name="apellidos"/>
+                <field name="dni"/>
+                <field name="telefono"/>
+                <field name="email"/>
+                <field name="cargo"/>
+                <field name="salario"/>
+
+                <!-- Estructura de la tarjeta -->
+                <templates>
+                    <t t-name="kanban-box">
+                        <!-- Contenedor principal de la tarjeta -->
+                        <div class="oe_kanban_global_click o_kanban_record" style="padding: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); background-color:rgb(145, 113, 158); color: white;">
+                            <div class="o_kanban_record_title" style="margin-bottom: 10px;">
+                                <strong style="font-size: 16px; color:rgb(255, 255, 255);">
+                                    <field name="nombre"/> <field name="apellidos"/>
+                                </strong>
+                            </div>
+
+                            <!-- Contenido de la tarjeta -->
+                            <div class="o_kanban_record_body" style="font-size: 14px;">
+                                <!-- Sección de información básica -->
+                                <div style="margin-bottom: 8px;">
+                                    <div><i class="fa fa-id-card"/> <strong>DNI:</strong> <field name="dni"/></div>
+                                    <div><i class="fa fa-phone"/> <strong>Teléfono:</strong> <field name="telefono"/></div>
+                                    <div><i class="fa fa-envelope"/> <strong>Email:</strong> <field name="email"/></div>
+                                </div>
+
+                                <!-- Sección de cargo y salario -->
+                                <div style="background:rgb(214, 164, 214); padding: 8px; border-radius: 4px;">
+                                    <div><strong>Cargo:</strong> <field name="cargo"/></div>
+                                    <div><strong>Salario:</strong> <field name="salario"/></div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+        <!-- Vista para Trabajador Lista -->
+    <record id="view_almacen_trabajador_list" model="ir.ui.view">
+        <field name="name">almacen.trabajador.list</field>
+        <field name="model">almacen.trabajador</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="nombre"/>
+                <field name="apellidos"/>
+                <field name="dni"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_almacen_cargo_form" model="ir.ui.view">
+        <field name="name">almacen.trabajador.form</field>
+        <field name="model">almacen.trabajador</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="nombre"/>
+                        <field name="apellidos"/>
+                        <field name="dni"/>
+                        <field name="telefono"/>
+                        <field name="email"/>
+                        <field name="cargo"/>
+                        <field name="salario"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Vista para Cargo -->
+    <record id="view_almacen_cargo_list" model="ir.ui.view">
+        <field name="name">almacen.cargo.list</field>
+        <field name="model">almacen.cargo</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="almacen"/>
+                <field name="cargo"/>
+                <field name="salario"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_almacen_cargo_form" model="ir.ui.view">
+        <field name="name">almacen.cargo.form</field>
+        <field name="model">almacen.cargo</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="cargo"/>
+                        <field name="salario"/>
+                        <field name="almacen"/>
+                        <field name="trabajador" widget="one2many_list"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+        <!-- Vista para Almacen -->
+    <record id="view_almacen_almacen_list" model="ir.ui.view">
+        <field name="name">almacen.almacen.list</field>
+        <field name="model">almacen.almacen</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="nombre"/>
+                <field name="activo"/>
+                <field name="ciudad"/>
+                <field name="fecha"/>
+                <field name="cargo"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_almacen_almacen_form" model="ir.ui.view">
+        <field name="name">almacen.almacen.form</field>
+        <field name="model">almacen.almacen</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="nombre"/>
+                        <field name="activo"/>
+                        <field name="ciudad"/>
+                        <field name="fecha"/>
+                        <field name="cargo" widget="many2many_tags" />  
+                        <field name="producto"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+            <!-- Vista para Producto kaban -->
+<record id="view_almacen_producto_kanban" model="ir.ui.view">
+    <field name="name">almacen.producto.kanban</field>
+    <field name="model">almacen.producto</field>
+    <field name="arch" type="xml">
+        <kanban>
+            <field name="producto"/>
+            <field name="codigo_barras"/>
+            <field name="estado"/>
+            <field name="stock"/>
+            <field name="pedir"/>
+            <field name="almacen"/>
+
+            <templates>
+                <t t-name="kanban-box">
+                    <div class="oe_kanban_global_click">
+                        <div class="o_kanban_record_title text-center">
+                            <strong><field name="producto"/></strong>
+                        </div>
+                        <div class="o_kanban_record_body text-center">
+                            <div>
+                                <span></span>
+                                <field name="codigo_barras" widget="image"/>
+                            </div>
+                            <div>
+                                <span>Estado: </span>
+                                <field name="estado"/>
+                            </div>
+                            <div>
+                                <span>Stock: </span>
+                                <field name="stock"/>
+                            </div>
+                            <div>
+                                <span>Pedir: </span>
+                                <field name="pedir"/>
+                            </div>
+                            <div>
+                                <span>Almacen: </span>
+                                <field name="almacen"/>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </templates>
+        </kanban>
+    </field>
+</record>
+
+
+
+            <!-- Vista para Producto -->
+    <record id="view_almacen_producto_list" model="ir.ui.view">
+        <field name="name">almacen.producto.list</field>
+        <field name="model">almacen.producto</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="producto"/>
+                <field name="codigo_barras" widget="image"/>
+                <field name="estado"/>
+                <field name="stock"/>
+                <field name="pedir"/>
+                <field name="almacen"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_almacen_producto_form" model="ir.ui.view">
+        <field name="name">almacen.producto.form</field>
+        <field name="model">almacen.producto</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="producto"/>
+                        <field name="codigo_barras" widget="image"/>
+                        <field name="estado"/>
+                        <field name="stock"/>
+                        <field name="pedir"/>
+                        <field name="almacen"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <!-- Acciones -->
+    <record id="action_almacen_trabajador" model="ir.actions.act_window">
+        <field name="name">Trabajador</field>
+        <field name="res_model">almacen.trabajador</field>
+        <field name="view_mode">kanban,list,form</field>
+    </record>
+
+    <record id="action_almacen_cargo" model="ir.actions.act_window">
+        <field name="name">Cargo</field>
+        <field name="res_model">almacen.cargo</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="action_almacen_almacen" model="ir.actions.act_window">
+        <field name="name">Almacen</field>
+        <field name="res_model">almacen.almacen</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="action_almacen_producto" model="ir.actions.act_window">
+        <field name="name">Producto</field>
+        <field name="res_model">almacen.producto</field>
+        <field name="view_mode">kanban,list,form</field>
+    </record>
+
+    <!-- Menús -->
+    <menuitem id="menu_almacen_root" name="Almacen"/>
+        <menuitem id="menu_almacen_trabajador" name="Trabajador" parent="menu_almacen_root" action="action_almacen_trabajador"/>
+        <menuitem id="menu_almacen_cargo" name="Cargo" parent="menu_almacen_root" action="action_almacen_cargo"/>
+        <menuitem id="menu_almacen_almacen" name="Almacen" parent="menu_almacen_root" action="action_almacen_almacen"/>
+        <menuitem id="menu_almacen_producto" name="Producto" parent="menu_almacen_root" action="action_almacen_producto"/>
+
+
+
+</odoo>

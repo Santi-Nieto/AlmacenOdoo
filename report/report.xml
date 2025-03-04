@@ -1,0 +1,87 @@
+<odoo>
+    <!-- Definir la plantilla QWeb -->
+    <template id="report_trabajador">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="trabajador">
+                <div class="page">
+                    <!-- Estilos en linea -->
+                    <style>
+ 
+                        /* Tabla */
+                        .table {
+                            width: 100%;
+                            border-collapse: collapse;
+                            margin-bottom: 20px;
+                        }
+
+                        .table th, .table td {
+                            padding: 12px;
+                            border: 1px solid #ddd;
+                        }
+
+                        .table th {
+                            background-color: #2c3e50;
+                            color: white;
+                            font-weight: bold;
+                        }
+
+                        .table td {
+                            background-color: #f9f9f9;
+                        }
+
+                        .data {
+                            font-weight: bold;
+                            color: #2c3e50;
+                        }
+
+                    </style>
+
+                    <!-- Contenido del reporte -->
+                    <div class="content">
+                        <table class="table table-bordered">
+                            <tr>
+                                <th class="bg-primary">Nombre</th>
+                                <td><span t-field="trabajador.nombre" class="data"/></td>
+                            </tr>
+                            <tr>
+                                <th class="bg-primary">Apellidos</th>
+                                <td><span t-field="trabajador.apellidos" class="data"/></td>
+                            </tr>
+                            <tr>
+                                <th class="bg-primary">DNI</th>
+                                <td><span t-field="trabajador.dni" class="data"/></td>
+                            </tr>
+                            <tr>
+                                <th class="bg-primary">Telefono</th>
+                                <td><span t-field="trabajador.telefono" class="data"/></td>
+                            </tr>
+                            <tr>
+                                <th class="bg-primary">Email</th>
+                                <td><span t-field="trabajador.email" class="data"/></td>
+                            </tr>
+                            <tr>
+                                <th class="bg-primary">Cargo</th>
+                                <td><span t-field="trabajador.cargo" class="data"/></td>
+                            </tr>
+                            <tr>
+                                <th class="bg-primary">Salario</th>
+                                <td><span t-field="trabajador.salario" class="data"/></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <!-- Definir el reporte -->
+    <record id="report_almacen_trabajador" model="ir.actions.report">
+        <field name="name">Reporte de Trabajadores</field>
+        <field name="model">almacen.trabajador</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">almacenes_condado.report_trabajador</field>
+        <field name="binding_model_id" ref="model_almacen_trabajador"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>
