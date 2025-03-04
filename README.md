@@ -18,3 +18,7 @@ Modulo de Odoo centrado en unos Almacenes
 
 # Una vez activado ya tendremos nuestro modulo operativo, seria tan facil como buscar en nuestra lista de Aplicaciones
 ![image](https://github.com/user-attachments/assets/790f7695-f90d-4234-ae88-e6157bab0117)
+
+# Problemas (Campo name)
+Tuve un problema en las relacion ya que al seleccionar las relaciones hace falta un campo name para enlanzar entonces use _rec_name 
+![image](https://github.com/user-attachments/assets/7ac12b4c-ddac-4adf-ab31-ce43581ecd7b)
