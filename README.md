@@ -16,5 +16,5 @@ Modulo de Odoo centrado en unos Almacenes
 # Una vez activado buscamos nuestro modulo y lo activamos (Ya lo tenia activado anteriormente)
 ![image](https://github.com/user-attachments/assets/d5b9815b-c201-4fb0-ae5b-e271607c820d)
 
-#Una vez activado ya tendremos nuestro modulo operativo, seria tan facil como buscar en nuestra lista de Aplicaciones
+# Una vez activado ya tendremos nuestro modulo operativo, seria tan facil como buscar en nuestra lista de Aplicaciones
 ![image](https://github.com/user-attachments/assets/790f7695-f90d-4234-ae88-e6157bab0117)
