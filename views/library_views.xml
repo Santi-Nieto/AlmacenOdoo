@@ -27,7 +27,7 @@
 
                             <!-- Contenido de la tarjeta -->
                             <div class="o_kanban_record_body" style="font-size: 14px;">
-                                <!-- Sección de información básica -->
+                                <!-- Sección de información basica -->
                                 <div style="margin-bottom: 8px;">
                                     <div><i class="fa fa-id-card"/> <strong>DNI:</strong> <field name="dni"/></div>
                                     <div><i class="fa fa-phone"/> <strong>Teléfono:</strong> <field name="telefono"/></div>
@@ -256,7 +256,7 @@
         <field name="view_mode">kanban,list,form</field>
     </record>
 
-    <!-- Menús -->
+    <!-- Menus -->
     <menuitem id="menu_almacen_root" name="Almacen"/>
         <menuitem id="menu_almacen_trabajador" name="Trabajador" parent="menu_almacen_root" action="action_almacen_trabajador"/>
         <menuitem id="menu_almacen_cargo" name="Cargo" parent="menu_almacen_root" action="action_almacen_cargo"/>
