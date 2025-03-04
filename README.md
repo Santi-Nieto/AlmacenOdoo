@@ -10,6 +10,11 @@ Modulo de Odoo centrado en unos Almacenes
 # Entramos como admin (admin, admin), activamos el modo debug (Ajustes, Activar modo desarrollador)
 ![image](https://github.com/user-attachments/assets/cfa7e906-4a8d-423d-b40f-99a7575618d4)   ![image](https://github.com/user-attachments/assets/b8f70c22-d578-43a6-85a9-b7a13fd4b2a7)
 
+# Nos vamos nuevamente a Aplicaciones y procedemos a pulsar Actualizar lista de aplicaciones
+![image](https://github.com/user-attachments/assets/8461562e-6b48-4c1e-a11b-ad699fc9cc1c)
 
+# Una vez activado buscamos nuestro modulo y lo activamos (Ya lo tenia activado anteriormente)
+![image](https://github.com/user-attachments/assets/d5b9815b-c201-4fb0-ae5b-e271607c820d)
 
-
+#Una vez activado ya tendremos nuestro modulo operativo, seria tan facil como buscar en nuestra lista de Aplicaciones
+![image](https://github.com/user-attachments/assets/790f7695-f90d-4234-ae88-e6157bab0117)
