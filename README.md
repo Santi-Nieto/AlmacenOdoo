@@ -22,3 +22,7 @@ Modulo de Odoo centrado en unos Almacenes
 # Problemas (Campo name)
 Tuve un problema en las relacion ya que al seleccionar las relaciones hace falta un campo name para enlanzar entonces use _rec_name 
 ![image](https://github.com/user-attachments/assets/7ac12b4c-ddac-4adf-ab31-ce43581ecd7b)
+
+# Problema 2 (Reporte PDF)
+Al intentar crear un reporte daba un fallo de que no encontraba un archivo especifico el cual era el siguietne
+![image](https://github.com/user-attachments/assets/f74740e2-7dbd-41aa-b6d4-f1e02aec6a4d)
